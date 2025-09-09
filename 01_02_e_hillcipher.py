@@ -1,3 +1,7 @@
+#Name: AKASH KUMAR
+#ROLL NO: 2025PGCSIS09
+
+
 # Hill Cipher (2x2)
 
 import numpy as np
