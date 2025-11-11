@@ -1,0 +1,18 @@
+# Implementation of SHA-128 (using truncated SHA-256)
+
+import hashlib
+
+def sha128_hash():
+    print("=== SHA-128 (Truncated SHA-256) ===")
+    message = input("Enter message: ").encode()
+
+    sha256_full = hashlib.sha256(message).digest()   # SHA-256 → 32 bytes
+    sha128_part = sha256_full[:16]                   # take first 16 bytes (128 bits)
+
+    print("\nOriginal Message:", message.decode())
+    print("Full SHA-256 (hex):", hashlib.sha256(message).hexdigest())
+    print("SHA-128 (first 128 bits):", sha128_part.hex())
+    print("Length of truncated hash:", len(sha128_part)*8, "bits")
+
+# Run the program
+sha128_hash()
